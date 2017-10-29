@@ -48,7 +48,7 @@ def load_data(data_file_name):
     return data, target, target_names
 
 
-if __name__ == "__main__":
+def main():
     data_file_name = abspath(join(dirname(__file__), 'iris.csv'))
     data, target, target_names = load_data(data_file_name)
 
@@ -93,3 +93,7 @@ if __name__ == "__main__":
     ax.w_zaxis.set_ticklabels([])
 
     plt.show()
+
+
+if __name__ == "__main__":
+    main()

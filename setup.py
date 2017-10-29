@@ -4,5 +4,10 @@ setup(
     name='classifier',
     packages=['classifier'],
     package_data={'':['iris.csv']},
-    zip_safe=False
+    zip_safe=False,
+    entry_points={
+        'console_scripts': [
+            'classify = classifier.plot_iris_dataset:main'
+        ]
+    }
 )
