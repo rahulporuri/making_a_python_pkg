@@ -2,5 +2,6 @@ from setuptools import find_packages, setup
 
 setup(
     name='classifier',
-    packages=find_packages()
+    packages=['classifier'],
+    zip_safe=False
 )

@@ -16,14 +16,13 @@ The below plot uses the first two features.
 See `here <https://en.wikipedia.org/wiki/Iris_flower_data_set>`_ for more
 information on this dataset.
 """
-print(__doc__)
 
 
 # Code source: Gaël Varoquaux
 # Modified for documentation by Jaques Grobler
 # License: BSD 3 clause
 import csv
-from os.path import dirname, join
+from os.path import abspath, dirname, join
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -33,7 +32,7 @@ from sklearn.decomposition import PCA
 
 
 def load_data(data_file_name):
-    with open(join(dirname(__file__), data_file_name)) as csv_file:
+    with open(data_file_name) as csv_file:
         data_file = csv.reader(csv_file)
         temp = next(data_file)
         n_samples = int(temp[0])
@@ -50,7 +49,8 @@ def load_data(data_file_name):
 
 
 if __name__ == "__main__":
-    data, target, target_names = load_data('iris.csv')
+    data_file_name = abspath(join(dirname(__file__), 'iris.csv'))
+    data, target, target_names = load_data(data_file_name)
 
     iris = dict(data=data, target=target,
                     target_names=target_names,
