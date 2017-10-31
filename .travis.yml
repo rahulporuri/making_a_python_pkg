@@ -5,7 +5,8 @@ python:
     - 3.6
 install:
     - pip install --upgrade pip
-    - pip install scipy matplotlib scikit_learn
+    - pip install scipy matplotlib scikit_learn sphinx
     - python setup.py develop
 script:
     - python -m unittest
+    - sphinx-build docs/source docs/build
